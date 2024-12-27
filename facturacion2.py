@@ -21,10 +21,10 @@ def crear_cliente(cl):
     cl['cedula'] = cedula_cliente
     cl['telefono'] = telefono_cliente
 
-def crear_factura(pr, cl, fc):
+def crear_factura(*n):
     factura={
-        'cliente' : cl.copy(),
-        'productos': pr.copy(),
+        'cliente' : clientes.copy(),
+        'productos': productos.copy(),
     }
     print("\n----- FACTURA -----")
     print(f"Cliente: {factura['cliente']['nombre']}")
@@ -38,7 +38,7 @@ def crear_factura(pr, cl, fc):
         suma += valor
     print(f"Total a pagar: {suma}")
 
-    fc.append(factura)
+    facturas.append(factura)
 
 
 def almacenar_facturas(fc):
